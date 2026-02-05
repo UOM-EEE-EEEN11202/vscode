@@ -4,7 +4,7 @@
         {
             "type": "lldb-dap",
             "request": "launch",
-            "name": "C: clang build and debug current file",
+            "name": "C: clang compile and debug current file",
             "program": "${fileDirname}/${fileBasenameNoExtension}",
             "args": [],
             "env": [],
@@ -15,7 +15,7 @@
         {
             "type": "lldb-dap",
             "request": "launch",
-            "name": "C++: clang++ build and debug current file",
+            "name": "C++: clang++ compile and debug current file",
             "program": "${fileDirname}/${fileBasenameNoExtension}",
             "args": [],
             "env": [],
