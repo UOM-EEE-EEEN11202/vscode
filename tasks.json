@@ -6,6 +6,83 @@
         {
             "label": "C: clang compile current file",
             "type": "shell",
+            "command": "echo",
+            "args": [
+                "-e",
+                "\nTask complete. Press any key to close this view.\n"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [],
+            "presentation": {
+                "reveal": "always",
+                "revealProblems": "onProblem",
+                "focus": true,
+                "echo": false,
+                "showReuseMessage": false,
+                "panel": "shared",
+                "clear": false,
+                "close": false
+            },
+            "group": {
+                "kind": "build",
+            },
+            "dependsOn": "C: Compile",
+            "dependsOrder": "sequence"
+        },
+        {
+            "label": "C: clang compile and run current file",
+            "type": "shell",
+            "command": "echo",
+            "args": [
+                "-e",
+                "\nTask complete. Press any key to close this view.\n"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [],
+            "presentation": {
+                "reveal": "always",
+                "revealProblems": "onProblem",
+                "focus": true,
+                "echo": false,
+                "showReuseMessage": false,
+                "panel": "shared",
+                "clear": false,
+                "close": false
+            },
+            "group": {
+                "kind": "build",
+            },
+            "dependsOn": "C: Compile and run",
+            "dependsOrder": "sequence"
+        },
+        {
+            "label": "C: Compile and run",
+            "type": "shell",
+            "command": "${fileDirname}/${fileBasenameNoExtension}",
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [],
+            "presentation": {
+                "reveal": "always",
+                "revealProblems": "onProblem",
+                "focus": true,
+                "echo": true,
+                "showReuseMessage": false,
+                "panel": "shared",
+                "clear": false,
+                "close": false
+            },
+            "dependsOn": "C: Compile",
+            "dependsOrder": "sequence"
+        },
+        {
+            "label": "C: Compile",
+            "type": "shell",
             "command": "/usr/bin/clang",
             "args": [
                 "-fcolor-diagnostics",
@@ -13,16 +90,22 @@
                 "-g",
                 "${file}",
                 "-o",
-                "${fileDirname}/${fileBasenameNoExtension}"
+                "${fileDirname}/${fileBasenameNoExtension}",
+                "-lm"
             ],
             "options": {
                 "cwd": "${fileDirname}"
             },
             "problemMatcher": [],
             "presentation": {
-                "reveal": "silent",
+                "reveal": "always",
                 "revealProblems": "onProblem",
-                "close": true
+                "focus": true,
+                "echo": true,
+                "showReuseMessage": false,
+                "panel": "shared",
+                "clear": false,
+                "close": false
             },
             "group": {
                 "kind": "build",
@@ -30,20 +113,84 @@
             }
         },
         {
-            "label": "C: clang compile and run current file",
+            "label": "C++: clang++ compile current file",
             "type": "shell",
-            "command": "${fileDirname}/${fileBasenameNoExtension}",
+            "command": "echo",
+            "args": [
+                "-e",
+                "\nTask complete. Press any key to close this view.\n"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
             "problemMatcher": [],
             "presentation": {
-                "panel": "shared",
                 "reveal": "always",
-                "focus": true
+                "revealProblems": "onProblem",
+                "focus": true,
+                "echo": false,
+                "showReuseMessage": false,
+                "panel": "shared",
+                "clear": false,
+                "close": false
             },
-            "dependsOn": "C: clang compile current file",
+            "group": {
+                "kind": "build",
+            },
+            "dependsOn": "C++: Compile",
             "dependsOrder": "sequence"
         },
         {
-            "label": "C++: clang++ compile current file",
+            "label": "C++: clang++ compile and run current file",
+            "type": "shell",
+            "command": "echo",
+            "args": [
+                "-e",
+                "\nTask complete. Press any key to close this view.\n"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [],
+            "presentation": {
+                "reveal": "always",
+                "revealProblems": "onProblem",
+                "focus": true,
+                "echo": false,
+                "showReuseMessage": false,
+                "panel": "shared",
+                "clear": false,
+                "close": false
+            },
+            "group": {
+                "kind": "build",
+            },
+            "dependsOn": "C++: Compile and run",
+            "dependsOrder": "sequence"
+        },
+        {
+            "label": "C++: Compile and run",
+            "type": "shell",
+            "command": "${fileDirname}/${fileBasenameNoExtension}",
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [],
+            "presentation": {
+                "reveal": "always",
+                "revealProblems": "onProblem",
+                "focus": true,
+                "echo": true,
+                "showReuseMessage": false,
+                "panel": "shared",
+                "clear": false,
+                "close": false
+            },
+            "dependsOn": "C++: Compile",
+            "dependsOrder": "sequence"
+        },
+        {
+            "label": "C++: Compile",
             "type": "shell",
             "command": "/usr/bin/clang++",
             "args": [
@@ -52,43 +199,70 @@
                 "-g",
                 "${file}",
                 "-o",
-                "${fileDirname}/${fileBasenameNoExtension}"
+                "${fileDirname}/${fileBasenameNoExtension}",
+                "-lm"
             ],
             "options": {
                 "cwd": "${fileDirname}"
             },
             "problemMatcher": [],
             "presentation": {
-                "reveal": "silent",
+                "reveal": "always",
                 "revealProblems": "onProblem",
-                "close": true
+                "focus": true,
+                "echo": true,
+                "showReuseMessage": false,
+                "panel": "shared",
+                "clear": false,
+                "close": false
             },
             "group": {
                 "kind": "build",
+                "isDefault": true
             }
-        },
-        {
-            "label": "C++: clang++ compile and run current file",
-            "type": "shell",
-            "command": "${fileDirname}/${fileBasenameNoExtension}",
-            "problemMatcher": [],
-            "presentation": {
-                "panel": "shared",
-                "reveal": "always",
-                "focus": true
-            },
-            "dependsOn": "C++: clang++ compile current file",
-            "dependsOrder": "sequence"
         },
         {
             "label": "Run current file",
             "type": "shell",
-            "command": "${fileDirname}/${fileBasenameNoExtension}",
+            "command": "echo",
+            "args": [
+                "-e",
+                "\nTask complete. Press any key to close this view.\n"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
             "problemMatcher": [],
             "presentation": {
-                "panel": "shared",
                 "reveal": "always",
-                "focus": true
+                "revealProblems": "onProblem",
+                "focus": true,
+                "echo": false,
+                "showReuseMessage": false,
+                "panel": "shared",
+                "clear": false,
+                "close": false
+            },
+            "dependsOn": "Run file",
+            "dependsOrder": "sequence"
+        },
+        {
+            "label": "Run file",
+            "type": "shell",
+            "command": "${fileDirname}/${fileBasenameNoExtension}",
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [],
+            "presentation": {
+                "reveal": "always",
+                "revealProblems": "onProblem",
+                "focus": true,
+                "echo": true,
+                "showReuseMessage": false,
+                "panel": "shared",
+                "clear": false,
+                "close": false
             }
         }
     ]

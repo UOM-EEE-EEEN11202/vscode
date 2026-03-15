@@ -1,5 +1,5 @@
 {
-    // Needs "lldb-dap.executable-path": "/usr/bin/lldb-dap-18" set in the devcontainer to work
+    // If type is lldb-dab then needs "lldb-dap.executable-path": "/usr/bin/lldb-dap-18" set in the devcontainer to work
     "configurations": [
         {
             "type": "lldb-dap",
@@ -7,10 +7,9 @@
             "name": "C: clang compile and debug current file",
             "program": "${fileDirname}/${fileBasenameNoExtension}",
             "args": [],
-            "env": [],
             "cwd": "${fileDirname}",
             "stopOnEntry": false,
-            "preLaunchTask": "C: clang compile and run current file"
+            "preLaunchTask": "C: clang compile current file"
         },
         {
             "type": "lldb-dap",
@@ -18,10 +17,9 @@
             "name": "C++: clang++ compile and debug current file",
             "program": "${fileDirname}/${fileBasenameNoExtension}",
             "args": [],
-            "env": [],
             "cwd": "${fileDirname}",
             "stopOnEntry": false,
-            "preLaunchTask": "C++: clang++ compile and run current file"
+            "preLaunchTask": "C++: clang++ compile current file"
         }
     ]
 }
